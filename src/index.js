@@ -17,6 +17,7 @@ var languageStrings = {
     "en": {
         "translation": {
             "FACTS": facts.FACTS_EN,
+            "FACTS_YEAR": facts.FACTS_YEAR_EN,
             "SKILL_NAME": "My History Facts",  // OPTIONAL change this to a more descriptive name
             "GET_FACT_MESSAGE": GET_FACT_MSG_EN[0],
             "HELP_MESSAGE": "You can say tell me a fact, or, you can say exit... What can I help you with?",
@@ -71,6 +72,18 @@ var handlers = {
     },
     'GetNewYearFactIntent': function () {
         //TODO your code here
+
+        var factYear = this.event.request.intent.slots.FACT_YEAR.value;
+        var factArr = this.t('FACTS');
+        var yearFact = GetYearFact(factYear, factArr);
+
+        // Create speech output
+        var speechOutput = randomPhrase(this.t("GET_FACT_MESSAGE")) + yearFact;
+        // Create reprompt output
+        var repromptSpeech = this.t("HELP_REPROMPT");
+        this.emit(':askWithCard', speechOutput, repromptSpeech, this.t("SKILL_NAME"), yearFact)
+    },
+    'GetYearFact': function() {
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE");
@@ -83,6 +96,18 @@ var handlers = {
     'AMAZON.StopIntent': function () {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     }
+};
+
+function GetYearFact(factYear, phraseArr) {
+    // Find and return fact for the factYear specified.
+    for (var i = 0; i < phraseArr.length; i++) {
+        var n = phraseArr[i].indexOf(factYear);
+        if (n > -1) {
+            return phraseArr[i];
+        }
+    }
+    // return random fact if year is not listed. 
+    return randomPhrase(phraseArr);
 };
 
 function randomPhrase(phraseArr) {
