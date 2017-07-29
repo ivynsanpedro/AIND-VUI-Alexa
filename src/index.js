@@ -3,7 +3,11 @@ var Alexa = require('alexa-sdk');
 var APP_ID = undefined;  // can be replaced with your app ID if publishing
 var facts = require('./facts');
 var GET_FACT_MSG_EN = [
-    "Here's your fact: "
+    "Here's a fact: ",
+    "Here's your fact: ",
+    "Here's some fact: ",
+    "Some fact: ",
+    "A fact: "
 ]
 // Test hooks - do not remove!
 exports.GetFactMsg = GET_FACT_MSG_EN;
@@ -19,9 +23,9 @@ var languageStrings = {
             "FACTS": facts.FACTS_EN,
             "FACTS_YEAR": facts.FACTS_YEAR_EN,
             "SKILL_NAME": "My History Facts",  // OPTIONAL change this to a more descriptive name
-            "GET_FACT_MESSAGE": GET_FACT_MSG_EN[0],
+            "GET_FACT_MESSAGE": GET_FACT_MSG_EN,
             "HELP_MESSAGE": "You can say tell me a fact, or, you can say exit... What can I help you with?",
-            "HELP_REPROMPT": "What can I help you with?",
+            "HELP_REPROMPT": "You can ask for a fact by saying: tell me an AI history fact",
             "STOP_MESSAGE": "Goodbye!"
         }
     }
