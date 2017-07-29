@@ -14,3 +14,19 @@ GetNewFactIntent tell me some information
 GetNewFactIntent give me some information
 GetNewFactIntent tell me some AI history information
 GetNewFactIntent give me some AI history information
+GetNewYearFactIntent a fact in {FACT_YEAR}
+GetNewYearFactIntent an AI history fact in {FACT_YEAR}
+GetNewYearFactIntent tell me a fact in {FACT_YEAR}
+GetNewYearFactIntent give me a fact in {FACT_YEAR}
+GetNewYearFactIntent tell me something in {FACT_YEAR}
+GetNewYearFactIntent give me something in {FACT_YEAR}
+GetNewYearFactIntent tell me an AI history fact in {FACT_YEAR}
+GetNewYearFactIntent give me an AI history fact in {FACT_YEAR}
+GetNewYearFactIntent tell me trivia in {FACT_YEAR}
+GetNewYearFactIntent give me trivia in {FACT_YEAR}
+GetNewYearFactIntent tell me an AI history trivia in {FACT_YEAR}
+GetNewYearFactIntent give me an AI history trivia in {FACT_YEAR}
+GetNewYearFactIntent tell me some information in {FACT_YEAR}
+GetNewYearFactIntent give me some information in {FACT_YEAR}
+GetNewYearFactIntent tell me some AI history information in {FACT_YEAR}
+GetNewYearFactIntent give me some AI history information in {FACT_YEAR}
