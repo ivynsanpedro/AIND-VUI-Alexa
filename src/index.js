@@ -67,8 +67,10 @@ var handlers = {
         var randomFact = randomPhrase(factArr);
 
         // Create speech output
-        var speechOutput = this.t("GET_FACT_MESSAGE") + randomFact;
-        this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomFact)
+        var speechOutput = randomPhrase(this.t("GET_FACT_MESSAGE")) + randomFact;
+        // Create reprompt output
+        var repromptSpeech = this.t("HELP_REPROMPT");
+        this.emit(':askWithCard', speechOutput, repromptSpeech, this.t("SKILL_NAME"), randomFact)
     },
     'GetNewYearFactIntent': function () {
         //TODO your code here
